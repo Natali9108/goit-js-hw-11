@@ -9,27 +9,23 @@ export default class PixabayAPI {
   }
 
   fetchPhotos() {
-    try {
-      console.log(this);
-      return axios
-        .get(`${this.#BASE_URL}`, {
-          params: {
-            page: this.page,
-            q: this.searchQuery,
-            per_page: 3,
-            image_type: 'photo',
-            orientation: 'horizontal',
-            safesearch: true,
-            key: this.#API_KEY,
-          },
-        })
-        .then(image => {
-          this.incrementPage();
-          return image.data.hits;
-        });
-    } catch (error) {
-      console.log(error);
-    }
+    console.log(this);
+    return axios
+      .get(`${this.#BASE_URL}`, {
+        params: {
+          page: this.page,
+          q: this.searchQuery,
+          per_page: 40,
+          image_type: 'photo',
+          orientation: 'horizontal',
+          safesearch: true,
+          key: this.#API_KEY,
+        },
+      })
+      .then(image => {
+        this.incrementPage();
+        return image;
+      });
   }
 
   incrementPage() {
