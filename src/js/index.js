@@ -33,7 +33,7 @@ function handelSearchImages(evt) {
     } else if (pixabayAPI.query === '') {
       // refs.loadMoreBtn.classList.add('is-hidden');
       clearImagesContainer();
-      Notiflix.Notify.info('Please, enter your search query');
+      Notiflix.Notify.warning('Please, enter your search query');
     } else {
       renderImages(data.hits);
       Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`, {
