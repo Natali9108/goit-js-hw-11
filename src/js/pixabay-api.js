@@ -8,10 +8,9 @@ export default class PixabayAPI {
     this.page = 1;
   }
 
-  fetchPhotos() {
-    console.log(this);
-    return axios
-      .get(`${this.#BASE_URL}`, {
+  async fetchPhotos() {
+    try {
+      const response = await axios.get(`${this.#BASE_URL}`, {
         params: {
           page: this.page,
           q: this.searchQuery,
@@ -21,11 +20,12 @@ export default class PixabayAPI {
           safesearch: true,
           key: this.#API_KEY,
         },
-      })
-      .then(image => {
-        this.incrementPage();
-        return image;
       });
+
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   incrementPage() {
