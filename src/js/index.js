@@ -22,6 +22,7 @@ let gallery = new SimpleLightbox('.gallery a', {
 
 async function handelSearchImages(evt) {
   evt.preventDefault();
+
   clearImagesContainer();
 
   pixabayAPI.query = evt.target.elements['searchQuery'].value.trim();
