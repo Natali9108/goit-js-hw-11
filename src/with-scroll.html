@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 11 with scroll</title>
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body>
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+
+      <button type="submit" class="search-btn">Search</button>
+    </form>
+    <div class="gallery">
+      <!-- Картки зображень -->
+    </div>
+    <div class="observer"></div>
+    <button class="go-up hide hiding">
+      <svg class="icon-circle-up" width="60" height="80">
+        <use href="./images/icons.svg#circleup"></use>
+      </svg>
+    </button>
+
+    <script type="module" src="./js/with-scroll.js"></script>
+  </body>
+</html>

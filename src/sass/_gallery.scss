@@ -117,3 +117,28 @@ img {
 .icon-download {
   fill: #085252;
 }
+
+.go-up {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  z-index: 999;
+  background-color: transparent;
+  border: none;
+  opacity: 1;
+  transition: opacity 5000ms ease-in-out;
+
+  cursor: pointer;
+}
+
+.go-up.hide {
+  display: none;
+}
+
+.go-up.hiding {
+  opacity: 0;
+}
+
+.icon-circle-up {
+  fill: rgba(216, 204, 44, 0.8);
+}
