@@ -1,4 +1,5 @@
 import PixabayAPI from './pixabay-api';
+import btnUpEL from './btn-up';
 import createGalleryCard from '../templates/gallery-card.hbs';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
@@ -113,61 +114,3 @@ function makeInfoMessage() {
     "We're sorry, but you've reached the end of search results."
   );
 }
-
-const btnUpEL = document.querySelector('.go-up');
-
-console.log(btnUpEL);
-
-function onScrollWindow() {
-  console.log(scrollY);
-  if (scrollY > 800) {
-    btnUpEL.classList.remove('hide');
-    setTimeout(() => {
-      btnUpEL.classList.remove('hiding');
-    }, 300);
-  } else
-    setTimeout(() => {
-      btnUpEL.classList.add('hiding');
-      btnUpEL.classList.add('hide');
-    }, 300);
-}
-
-window.addEventListener('scroll', onScrollWindow);
-
-// const btnUp = {
-// btnUpEL: document.querySelector('go-up'),
-// scrolling: false,
-
-//   show() {
-//     btnUpEL.classList.remove('hide');
-//   },
-
-//   hide() {
-//     btnUpEL.classList.add('hide');
-//   },
-
-//   onScrollWindow() {
-//     window.addEventListener('scroll', () => {
-//       if (scrollY < 800) {
-//         this.hide;
-//         return;
-//       } else if (scrollY > 800) {
-//         this.show();
-//         return;
-//       }
-//     });
-//   },
-// };
-// console.log(scrollY < 800);
-
-// window.addEventListener('scroll', () => {
-//   console.log(scrollY > 1000);
-// });
-
-//  btnUp.addEventListener('click', () => {
-//     window.scrollTo({
-//       top: 0,
-//       left: 0,
-//       behavior: 'smooth',
-//     });
-//   });

@@ -121,8 +121,7 @@ img {
 .go-up {
   position: fixed;
   bottom: 0;
-  right: 20px;
-  z-index: 999;
+  right: 30px;
   background-color: transparent;
   border: none;
   opacity: 1;
@@ -140,5 +139,5 @@ img {
 }
 
 .icon-circle-up {
-  fill: rgba(216, 204, 44, 0.8);
+  fill: rgba(216, 204, 44);
 }
